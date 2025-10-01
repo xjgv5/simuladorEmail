@@ -12,18 +12,18 @@ document.addEventListener('DOMContentLoaded', function () {
     inputMensaje.addEventListener('blur', validar)
 
     function validar(e) {
-
+        let campo = e.target.id
         let txt = e.target.value.trim()
         if (txt === '') {
-            mostarAlerta()
+            mostarAlerta(`El campo ${campo} es obligatorio`)
         } else {
             console.log("todo ok")
         }
     }
 
-    function mostarAlerta() {
+    function mostarAlerta(mensaje) {
         const error = document.createElement('p')
-        error.textContent = "Hubo un error"
+        error.textContent = mensaje
         error.classList.add('bg-red-600', 'text-white', 'p-2', 'text-center')
 
         // Inyectar el error en el formulario
