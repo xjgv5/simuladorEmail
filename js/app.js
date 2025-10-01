@@ -5,13 +5,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const inputMensaje = document.querySelector('#mensaje')
 
     // asignar eventos
-    inputEmail.addEventListener('blur', function (e) {
+    inputEmail.addEventListener('blur', validar)
+    inputAsunto.addEventListener('blur', validar)
+    inputMensaje.addEventListener('blur', validar)
+
+    function validar(e) {
+        // console.log('desde la funcion de validar')
         console.log(e.target.value)
-    })
-    inputAsunto.addEventListener('blur', function (e) {
-        console.log(e.target.value)
-    })
-    inputMensaje.addEventListener('blur', function (e) {
-        console.log(e.target.value)
-    })
+    }
 })
