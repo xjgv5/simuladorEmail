@@ -10,7 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
     inputMensaje.addEventListener('blur', validar)
 
     function validar(e) {
-        // console.log('desde la funcion de validar')
-        console.log(e.target.value)
+
+
+        let txt = e.target.value
+        if (txt === '') {
+            console.log('El campo no puede estar vaio')
+        } else {
+            console.log("todo ok")
+        }
     }
 })
