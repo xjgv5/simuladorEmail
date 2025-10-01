@@ -11,12 +11,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function validar(e) {
 
-
-        let txt = e.target.value
+        let txt = e.target.value.trim()
         if (txt === '') {
-            console.log('El campo no puede estar vaio')
+            mostarAlerta()
         } else {
             console.log("todo ok")
         }
+    }
+
+    function mostarAlerta() {
+        const error = document.createElement('p')
+        error.textContent = "Hubo un error"
+
+        console.log(error)
     }
 })
