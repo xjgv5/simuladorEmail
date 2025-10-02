@@ -25,6 +25,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function mostarAlerta(mensaje, referencia) {
+        // Comprueba si ya existe una alerta
+        const alerta = referencia.querySelector('.bg-red-600')
+
+        if (alerta) {
+            alerta.remove()
+        }
+
         const error = document.createElement('p')
         error.textContent = mensaje
         error.classList.add('bg-red-600', 'text-white', 'p-2', 'text-center')
