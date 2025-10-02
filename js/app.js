@@ -19,18 +19,15 @@ document.addEventListener('DOMContentLoaded', function () {
         let txt = e.target.value.trim()
         if (txt === '') {
             mostarAlerta(`El campo ${campo} es obligatorio`, referencia)
-        } else {
-            console.log("todo ok")
+            return
         }
+
+        limpiarAlerta(referencia)
     }
 
     function mostarAlerta(mensaje, referencia) {
-        // Comprueba si ya existe una alerta
-        const alerta = referencia.querySelector('.bg-red-600')
 
-        if (alerta) {
-            alerta.remove()
-        }
+        limpiarAlerta(referencia)
 
         const error = document.createElement('p')
         error.textContent = mensaje
@@ -38,5 +35,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Inyectar el error en el formulario
         referencia.appendChild(error)
+    }
+
+    function limpiarAlerta(referencia) {
+        console.log("desde limpiar alerta")
+        const alerta = referencia.querySelector('.bg-red-600')
+
+        if (alerta) {
+            alerta.remove()
+        }
     }
 })
